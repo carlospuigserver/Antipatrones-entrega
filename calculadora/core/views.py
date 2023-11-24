@@ -2,7 +2,5 @@ from django.shortcuts import render,HttpResponse
 
 # core/views.py
 
-from django.shortcuts import render
-
-def calculadora(request):
-    return render(request, 'core/index.html')
+def home(request):
+ return HttpResponse("<h1>Mi Web Personal</h1><h2>Portada</h2>")

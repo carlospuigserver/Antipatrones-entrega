@@ -42,7 +42,7 @@ En resumen, el código presenta características de "Spaghetti Code" debido a su
 
 
 # DJANGO: 
-Para ampliar este pruyecto, he levantando un django
+Para ampliar este proyecto, he levantando un django, en el cual mediante la app calculadore y dentro el core, manejando las relaciones de la views.py de core, y de la urls.py de la carpeta calculadora dentro de calculadora, haciendo uso de los templates (index.html, style.css y script.js) para realizar un proyecto brutal
 
 
 

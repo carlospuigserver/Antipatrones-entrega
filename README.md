@@ -41,6 +41,11 @@ En resumen, el código presenta características de "Spaghetti Code" debido a su
 
 
 
+# DJANGO: 
+Para ampliar este pruyecto, he levantando un django
+
+
+
 
 
 

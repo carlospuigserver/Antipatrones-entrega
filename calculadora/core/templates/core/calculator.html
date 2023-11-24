@@ -4,46 +4,50 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Calculadora WEB</title>
-    <link rel="stylesheet" href="{% static 'style.css' %}">
-    <style>
-        /* Aquí puedes agregar estilos específicos para esta plantilla si es necesario */
-    </style>
+    <title>Calculadora</title>
 </head>
 
 <body>
+
     <div id="calculadora">
 
         <h1>Calculadora WEB</h1>
 
-        <form method="post" action="">
-            {% csrf_token %}
-            {{ form.expression }}
-            <br>
-
-            <!-- Botones para números y operadores -->
-            {% for i in "789/456*123-0.C+=" %}
-                <input type="button" value="{{ i }}" onclick="appendCharacter('{{ i }}')">
-                {% if forloop.counter|divisibleby:3 and not forloop.last %}
-                    <br>
-                {% endif %}
-            {% endfor %}
-        </form>
+        <input type="text" id="inputNumbers" placeholder="Introduce números o realiza operaciones binarias">
 
         <div id="info"></div>
 
-        <!-- Script para manejar la lógica de la calculadora -->
-        <script>
-            function appendCharacter(character) {
-                // Lógica para agregar el carácter al campo de expresión
-                var expressionField = document.getElementById("id_expression");
-                expressionField.value += character;
-            }
+        <div class="seccion" id="operadores">
+            <h2>Operadores Binarios</h2>
+            <button onclick="guardarOperador('+')">+</button>
+            <button onclick="guardarOperador('-')">-</button>
+            <button onclick="guardarOperador('*')">*</button>
+            <button onclick="guardarOperador('/')">/</button>
+            <button onclick="calcularResultado('')">=</button>
+        </div>
 
-            // Otros scripts y funciones necesarios para la lógica de la calculadora
+        <div class="seccion" id="operadores-exponenciales">
+            <h2>Operadores Exponenciales</h2>
+            <button onclick="calcularCuadrado()">^2</button>
+            <button onclick="calcularCubo()">^3</button>
+        </div>
 
-        </script>
+        <div class="seccion" id="operaciones-csv">
+            <h2>Operaciones CSV</h2>
+            <button id="sumatorio" onclick="sumatorio()">Sumatorio</button>
+            <button id="ordenar" onclick="ordenar()">Ordenar</button>
+            <button id="revertir" onclick="revertir()">Revertir</button>
+            <button id="quitar" onclick="quitar()">Quitar Último</button>
+        </div>
+
+        <div class="seccion" id="operaciones-unitarias">
+            <h2>Operaciones Unitarias</h2>
+            <button id="modulo" onclick="mod()">Módulo</button>
+            <button id="factorial" onclick="fact()">Factorial</button>
+        </div>
+
     </div>
+
 </body>
 
 </html>
